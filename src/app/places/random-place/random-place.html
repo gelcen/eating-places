@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-content>
+    <div class="random-place">
+      @if (randomPlace$ | async; as place) {
+        <div class="random-place__text">
+          <h4>{{ place.name }}</h4>
+          <p>Фастфуд: {{ place.isFastFood }}, Дорого: {{ place.isCheap }}, Доставка есть: {{ place.hasDelivery }}</p>
+        </div>
+      }
+
+      <button type="button" matButton="filled" (click)="onGetPlace()">Получить место!</button>
+    </div>
+  </mat-card-content>
+</mat-card>

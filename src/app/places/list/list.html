@@ -1,0 +1,17 @@
+<mat-card style="margin-top: 15px;">
+  <mat-card-header>
+    <mat-card-title>Список мест</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="list">
+      <mat-list>
+        @for (place of (places$ | async); track place.id) {
+          <h4>{{ place.name }}</h4>
+          <p>Фастфуд: {{ place.isFastFood }}, Дорого: {{ place.isCheap }}, Доставка есть: {{ place.hasDelivery }}</p>
+          <mat-divider></mat-divider>
+        }
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,17 @@
+h4, p {
+  margin: 0;
+}
+
+.random-place {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 5px;
+}
+
+.random-place__text {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

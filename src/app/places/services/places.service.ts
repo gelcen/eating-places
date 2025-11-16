@@ -171,15 +171,15 @@ export class PlacesService implements IPlacesService {
   getPlaces(filter: PlacesFilter): Observable<Place[]> {
     var filteredPlaces = this.places;
 
-    if (filter.isFastFood) {
+    if (filter.isFastFood !== null && filter.isFastFood !== undefined) {
       filteredPlaces = filteredPlaces.filter(x => x.isFastFood === filter.isFastFood);
     }
 
-    if (filter.hasDelivery !== undefined) {
+    if (filter.hasDelivery !== null && filter.hasDelivery !== undefined) {
       filteredPlaces = filteredPlaces.filter(x => x.hasDelivery === filter.hasDelivery);
     }
 
-    if (filter.isCheap !== undefined) {
+    if (filter.isCheap !== null && filter.isCheap !== undefined) {
       filteredPlaces = filteredPlaces.filter(x => x.isCheap === filter.isCheap);
     }
 

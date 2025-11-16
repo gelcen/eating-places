@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Фильтр</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-expansion-panel [expanded]="panelOpenState" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Фильтрушка</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-label>Фастфуд?</mat-label>
+          <mat-select formControlName="isFastFood">
+            <mat-option>Не выбрано</mat-option>
+            <mat-option value="yes">Да</mat-option>
+            <mat-option value="no">Нет</mat-option>
+            <mat-option value="both">Both</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <label>Дешево?</label>
+        <mat-radio-group formControlName="isCheap" aria-label="Дешево?">
+          <mat-radio-button [value]="true">Да</mat-radio-button>
+          <mat-radio-button [value]="false">Нет</mat-radio-button>
+          <mat-radio-button [value]="null">Без разницы</mat-radio-button>
+        </mat-radio-group>
+
+        <label>Доставка?</label>
+        <mat-radio-group formControlName="hasDelivery" aria-label="Доставка?">
+          <mat-radio-button [value]="true">Да</mat-radio-button>
+          <mat-radio-button [value]="false">Нет</mat-radio-button>
+          <mat-radio-button [value]="null">Без разницы</mat-radio-button>
+        </mat-radio-group>
+      </form>
+    </mat-expansion-panel>
+
+  </mat-card-content>
+</mat-card>
